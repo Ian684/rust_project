@@ -1,49 +1,34 @@
 #[derive(Clone, Debug)]
 struct Record {
     id: usize,
-    label: String,
+    name: String,
     value: i32,
 }
 
 impl Record {
-    fn new(id: usize, label: &str, value: i32) -> Self {
-        Self { id, label: label.to_string(), value }
+    fn grade(&self) -> char {
+        if self.value >= 90 { 'A' } else if self.value >= 80 { 'B' } else { 'C' }
     }
 }
 
-fn total(records: &[Record]) -> i32 {
-    records.iter().map(|record| record.value).sum()
-}
-
-fn maximum(records: &[Record]) -> Option<i32> {
-    records.iter().map(|record| record.value).max()
+fn summarize(records: &[Record]) -> (i32, i32, i32) {
+    let sum = records.iter().map(|record| record.value).sum();
+    let maximum = records.iter().map(|record| record.value).max().unwrap_or(0);
+    let minimum = records.iter().map(|record| record.value).min().unwrap_or(0);
+    (sum, maximum, minimum)
 }
 
 fn main() {
-    println!("Rust exercise 27: option_result");
-    let mut records = vec![
-        Record::new(1, "Ada", 92),
-        Record::new(2, "Linus", 84),
-        Record::new(3, "Grace", 97),
-        Record::new(4, "Ken", 78),
+    println!("Exercise 17: option_result");
+    println!("Mechanism: Option and Result");
+    let records = vec![
+        Record { id: 1, name: "Ada".into(), value: 92 },
+        Record { id: 2, name: "Linus".into(), value: 84 },
+        Record { id: 3, name: "Grace".into(), value: 97 },
     ];
-
-    records.sort_by_key(|record| record.id);
     for record in &records {
-        println!("{} {} {}", record.id, record.label, record.value);
+        println!("{} {} {} {}", record.id, record.name, record.value, record.grade());
     }
-
-    println!("Total: {}", total(&records));
-    println!("Maximum: {:?}", maximum(&records));
-
-    let names = records
-        .iter()
-        .map(|record| record.label.as_str())
-        .collect::<Vec<_>>()
-        .join(", ");
-    println!("Names: {}", names);
-
-    let mut reversed = records.clone();
-    reversed.reverse();
-    println!("Reversed: {:?}", reversed);
+    let result = summarize(&records);
+    println!("sum={} maximum={} minimum={}", result.0, result.1, result.2);
 }
