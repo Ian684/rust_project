@@ -1,10 +1,10 @@
 # Rust 練習
 
-**目前共 50 個實作練習單元。** 完整題號、來源與執行方式見 [CATALOG.md](CATALOG.md)，機器可讀清單見 [EXERCISES.json](EXERCISES.json)。
+完整題號、來源與執行方式見 [CATALOG.md](CATALOG.md)，機器可讀清單見 [EXERCISES.json](EXERCISES.json)。
 
 以下保留起步練習的說明；其餘題目按完整目錄閱讀。
 
-原本各 Cargo 專案保留。新增 practice/ 是獨立 package，沒有第三方 crate，以四個小實作練習所有權、錯誤傳遞、借用與執行緒。需要 Rust 1.63 以上。
+原本各 Cargo 專案保留。新增 practice/ 是獨立 package，沒有第三方 crate，練習所有權、錯誤傳遞、借用與執行緒。需要 Rust 1.63 以上。
 
     cargo run --manifest-path practice/Cargo.toml
     cargo test --offline --manifest-path practice/Cargo.toml
