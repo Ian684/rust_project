@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "title": "泛型堆疊",
+    "source": "practice/src/lib.rs",
+    "entry": "Stack",
+    "goal": ""
+  },
+  {
+    "id": 2,
+    "title": "數值統計",
+    "source": "practice/src/lib.rs",
+    "entry": "parse_statistics",
+    "goal": ""
+  },
+  {
+    "id": 3,
+    "title": "借用單字索引",
+    "source": "practice/src/lib.rs",
+    "entry": "word_positions",
+    "goal": ""
+  },
+  {
+    "id": 4,
+    "title": "分段執行緒加總",
+    "source": "practice/src/lib.rs",
+    "entry": "parallel_sum",
+    "goal": ""
+  },
+  {
+    "id": 5,
+    "title": "移動 tuple 所有權",
+    "source": "practice/src/more.rs",
+    "entry": "swap_pair",
+    "goal": ""
+  },
+  {
+    "id": 6,
+    "title": "相鄰重複值與 Vec",
+    "source": "practice/src/more.rs",
+    "entry": "dedup_adjacent",
+    "goal": ""
+  },
+  {
+    "id": 7,
+    "title": "切片分塊與錯誤",
+    "source": "practice/src/more.rs",
+    "entry": "chunks",
+    "goal": ""
+  },
+  {
+    "id": 8,
+    "title": "迭代器攤平",
+    "source": "practice/src/more.rs",
+    "entry": "flatten",
+    "goal": ""
+  },
+  {
+    "id": 9,
+    "title": "entry 計數",
+    "source": "practice/src/more.rs",
+    "entry": "frequencies",
+    "goal": ""
+  },
+  {
+    "id": 10,
+    "title": "依字元數分組",
+    "source": "practice/src/more.rs",
+    "entry": "group_length",
+    "goal": ""
+  },
+  {
+    "id": 11,
+    "title": "partition 拆分集合",
+    "source": "practice/src/more.rs",
+    "entry": "partition_even",
+    "goal": ""
+  },
+  {
+    "id": 12,
+    "title": "scan 前綴累積",
+    "source": "practice/src/more.rs",
+    "entry": "running_totals",
+    "goal": ""
+  },
+  {
+    "id": 13,
+    "title": "zip 的長度契約",
+    "source": "practice/src/more.rs",
+    "entry": "dot_product",
+    "goal": ""
+  },
+  {
+    "id": 14,
+    "title": "checked_mul 溢位",
+    "source": "practice/src/more.rs",
+    "entry": "factorial",
+    "goal": ""
+  },
+  {
+    "id": 15,
+    "title": "迴圈狀態與 checked_add",
+    "source": "practice/src/more.rs",
+    "entry": "fibonacci",
+    "goal": ""
+  },
+  {
+    "id": 16,
+    "title": "除以零與 MIN/-1",
+    "source": "practice/src/more.rs",
+    "entry": "safe_divide",
+    "goal": ""
+  },
+  {
+    "id": 17,
+    "title": "借用的 Option",
+    "source": "practice/src/more.rs",
+    "entry": "safe_get",
+    "goal": ""
+  },
+  {
+    "id": 18,
+    "title": "字元不是位元組",
+    "source": "practice/src/more.rs",
+    "entry": "reverse_unicode",
+    "goal": ""
+  },
+  {
+    "id": 19,
+    "title": "回傳原字串借用",
+    "source": "practice/src/more.rs",
+    "entry": "first_word",
+    "goal": ""
+  },
+  {
+    "id": 20,
+    "title": "字串配置與正規化",
+    "source": "practice/src/more.rs",
+    "entry": "word_counts",
+    "goal": ""
+  },
+  {
+    "id": 21,
+    "title": "char_indices 的 byte 位移",
+    "source": "practice/src/more.rs",
+    "entry": "character_offsets",
+    "goal": ""
+  },
+  {
+    "id": 22,
+    "title": "Option 表達不存在",
+    "source": "practice/src/more.rs",
+    "entry": "trim_nonempty",
+    "goal": ""
+  },
+  {
+    "id": 23,
+    "title": "split_once 與 Result",
+    "source": "practice/src/more.rs",
+    "entry": "parse_property",
+    "goal": ""
+  },
+  {
+    "id": 24,
+    "title": "match 白名單",
+    "source": "practice/src/more.rs",
+    "entry": "parse_switch",
+    "goal": ""
+  },
+  {
+    "id": 25,
+    "title": "? 傳遞解析錯誤",
+    "source": "practice/src/more.rs",
+    "entry": "sum_numbers",
+    "goal": ""
+  },
+  {
+    "id": 26,
+    "title": "排序副本不改輸入",
+    "source": "practice/src/more.rs",
+    "entry": "median",
+    "goal": ""
+  },
+  {
+    "id": 27,
+    "title": "連號壓縮與溢位邊界",
+    "source": "practice/src/more.rs",
+    "entry": "compress_ranges",
+    "goal": ""
+  },
+  {
+    "id": 28,
+    "title": "雙 iter 的 merge",
+    "source": "practice/src/more.rs",
+    "entry": "merge_sorted",
+    "goal": ""
+  },
+  {
+    "id": 29,
+    "title": "二分搜尋最左位置",
+    "source": "practice/src/more.rs",
+    "entry": "first_equal",
+    "goal": ""
+  },
+  {
+    "id": 30,
+    "title": "Vec 旋轉與空集合",
+    "source": "practice/src/more.rs",
+    "entry": "rotate_left",
+    "goal": ""
+  },
+  {
+    "id": 31,
+    "title": "括號配對",
+    "source": "practice/src/more.rs",
+    "entry": "balanced",
+    "goal": ""
+  },
+  {
+    "id": 32,
+    "title": "帶溢位檢查的運算式",
+    "source": "practice/src/more.rs",
+    "entry": "postfix",
+    "goal": ""
+  },
+  {
+    "id": 33,
+    "title": "可變狀態的 Euclid",
+    "source": "practice/src/more.rs",
+    "entry": "gcd",
+    "goal": ""
+  },
+  {
+    "id": 34,
+    "title": "Vec<bool> 篩法",
+    "source": "practice/src/more.rs",
+    "entry": "primes",
+    "goal": ""
+  },
+  {
+    "id": 35,
+    "title": "二項式係數與 checked_add",
+    "source": "practice/src/more.rs",
+    "entry": "pascal_row",
+    "goal": ""
+  },
+  {
+    "id": 36,
+    "title": "矩形檢查與配置",
+    "source": "practice/src/more.rs",
+    "entry": "transpose",
+    "goal": ""
+  },
+  {
+    "id": 37,
+    "title": "邊界收縮的矩陣走訪",
+    "source": "practice/src/more.rs",
+    "entry": "spiral",
+    "goal": ""
+  },
+  {
+    "id": 38,
+    "title": "巢狀迭代器與 move",
+    "source": "practice/src/more.rs",
+    "entry": "cartesian",
+    "goal": ""
+  },
+  {
+    "id": 39,
+    "title": "不重複位置組合",
+    "source": "practice/src/more.rs",
+    "entry": "index_pairs",
+    "goal": ""
+  },
+  {
+    "id": 40,
+    "title": "Unicode 連續段",
+    "source": "practice/src/more.rs",
+    "entry": "run_length",
+    "goal": ""
+  },
+  {
+    "id": 41,
+    "title": "位元組格式化",
+    "source": "practice/src/more.rs",
+    "entry": "hex_encode",
+    "goal": ""
+  },
+  {
+    "id": 42,
+    "title": "chunks_exact 與非法 hex",
+    "source": "practice/src/more.rs",
+    "entry": "hex_decode",
+    "goal": ""
+  },
+  {
+    "id": 43,
+    "title": "浮點數有限值驗證",
+    "source": "practice/src/more.rs",
+    "entry": "celsius",
+    "goal": ""
+  },
+  {
+    "id": 44,
+    "title": "區間的 Result<Option>",
+    "source": "practice/src/more.rs",
+    "entry": "overlap",
+    "goal": ""
+  },
+  {
+    "id": 45,
+    "title": "排序後 take",
+    "source": "practice/src/more.rs",
+    "entry": "smallest",
+    "goal": ""
+  },
+  {
+    "id": 46,
+    "title": "BTreeSet 集合差",
+    "source": "practice/src/more.rs",
+    "entry": "set_difference",
+    "goal": ""
+  },
+  {
+    "id": 47,
+    "title": "保留出現次數的交集",
+    "source": "practice/src/more.rs",
+    "entry": "multiset_intersection",
+    "goal": ""
+  },
+  {
+    "id": 48,
+    "title": "windows API 與錯誤",
+    "source": "practice/src/more.rs",
+    "entry": "window_maxima",
+    "goal": ""
+  },
+  {
+    "id": 49,
+    "title": "候選人再驗票",
+    "source": "practice/src/more.rs",
+    "entry": "majority",
+    "goal": ""
+  },
+  {
+    "id": 50,
+    "title": "泛型閉包參數",
+    "source": "practice/src/more.rs",
+    "entry": "apply_twice",
+    "goal": ""
+  }
+]

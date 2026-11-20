@@ -1,4 +1,5 @@
 //! Small exercises in ownership, Result, borrowed data and scoped threads.
+pub mod more;
 use std::collections::BTreeMap;
 
 #[derive(Debug, Default)]
