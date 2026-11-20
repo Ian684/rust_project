@@ -1,1 +1,0 @@
-#[derive(Debug)]struct Node{value:i32,left:Option<Box<Node>>,right:Option<Box<Node>>}fn main(){let tree=Node{value:10,left:Some(Box::new(Node{value:5,left:None,right:None})),right:Some(Box::new(Node{value:15,left:None,right:None}))};println!("{:?}",tree);}

@@ -1,1 +1,0 @@
-use std::io::{self,BufRead};fn main(){print!("Enter text: ");let _=io::Write::flush(&mut io::stdout());let mut line=String::new();if io::stdin().lock().read_line(&mut line).is_ok(){println!("You entered: {}",line.trim());}}

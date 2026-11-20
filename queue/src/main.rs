@@ -1,1 +1,0 @@
-#[derive(Default)]struct Queue<T>{items:Vec<T>}impl<T>Queue<T>{fn enqueue(&mut self,v:T){self.items.push(v)}fn dequeue(&mut self)->Option<T>{if self.items.is_empty(){None}else{Some(self.items.remove(0))}}}fn main(){let mut q=Queue::default();q.enqueue(10);q.enqueue(20);println!("{:?}",q.dequeue());println!("{:?}",q.dequeue());}
