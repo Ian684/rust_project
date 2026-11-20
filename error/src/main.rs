@@ -47,3 +47,34 @@ fn main() {
         Err(y) => println!("{}" , y),
     }
 }
+
+fn exercise_3389062351_sum(values: &[i32]) -> i64 {
+    values.iter().map(|value| *value as i64).sum()
+}
+
+fn exercise_3389062351_maximum(values: &[i32]) -> Option<i32> {
+    values.iter().copied().max()
+}
+
+fn exercise_3389062351_minimum(values: &[i32]) -> Option<i32> {
+    values.iter().copied().min()
+}
+
+fn exercise_3389062351_squares(values: &[i32]) -> Vec<i64> {
+    values.iter().map(|value| (*value as i64) * (*value as i64)).collect()
+}
+
+fn exercise_3389062351_filtered(values: &[i32], threshold: i32) -> Vec<i32> {
+    values.iter().copied().filter(|value| *value >= threshold).collect()
+}
+
+#[cfg(test)]
+mod exercise_3389062351_tests {
+    use super::*;
+
+    #[test]
+    fn exercise_3389062351_sum_test() {
+        assert_eq!(exercise_3389062351_sum(&[1, 2, 3]), 6);
+    }
+}
+const EXERCISE_3389062351_79: i32 = 130;

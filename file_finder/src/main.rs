@@ -40,3 +40,41 @@ fn main() {
         Err(y) => println!("{}" , y),
     }
 }
+
+fn exercise_70497782_sum(values: &[i32]) -> i64 {
+    values.iter().map(|value| *value as i64).sum()
+}
+
+fn exercise_70497782_maximum(values: &[i32]) -> Option<i32> {
+    values.iter().copied().max()
+}
+
+fn exercise_70497782_minimum(values: &[i32]) -> Option<i32> {
+    values.iter().copied().min()
+}
+
+fn exercise_70497782_squares(values: &[i32]) -> Vec<i64> {
+    values.iter().map(|value| (*value as i64) * (*value as i64)).collect()
+}
+
+fn exercise_70497782_filtered(values: &[i32], threshold: i32) -> Vec<i32> {
+    values.iter().copied().filter(|value| *value >= threshold).collect()
+}
+
+#[cfg(test)]
+mod exercise_70497782_tests {
+    use super::*;
+
+    #[test]
+    fn exercise_70497782_sum_test() {
+        assert_eq!(exercise_70497782_sum(&[1, 2, 3]), 6);
+    }
+}
+const EXERCISE_70497782_72: i32 = 154;
+const EXERCISE_70497782_73: i32 = 155;
+const EXERCISE_70497782_74: i32 = 156;
+const EXERCISE_70497782_75: i32 = 157;
+const EXERCISE_70497782_76: i32 = 158;
+const EXERCISE_70497782_77: i32 = 159;
+const EXERCISE_70497782_78: i32 = 160;
+const EXERCISE_70497782_79: i32 = 161;
