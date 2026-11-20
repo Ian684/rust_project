@@ -54,3 +54,5 @@ cargo clippy -- -D warnings
 
 These commands are guidance for each local exercise; availability depends on
 whether that directory defines a Cargo package.
+
+The collection now also includes focused exercises for collections, ownership, smart pointers, concurrency, file input, pattern matching, and small data structures.

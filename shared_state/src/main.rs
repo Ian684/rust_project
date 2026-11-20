@@ -1,0 +1,1 @@
+﻿use std::sync::{Arc,Mutex};use std::thread;fn main(){let n=Arc::new(Mutex::new(0));let mut hs=vec![];for _ in 0..2{let c=Arc::clone(&n);hs.push(thread::spawn(move||{*c.lock().unwrap()+=1;}));}for h in hs{h.join().unwrap();}println!("{}",n.lock().unwrap());}
