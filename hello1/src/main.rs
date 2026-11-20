@@ -1,80 +1,80 @@
-use std::io;
-fn main() {
-    let mut s = String::new();
-    io::stdin()
-        .read_line(&mut s)
-        .unwrap();
-    println!("{}" , s);
-    
-    s = s.trim().to_string();
-    println!("{}" , s);
-    //one line str
+#[derive(Clone,Debug)]
+enum Exercise39State{Idle,Running,Finished}
 
-    let n: i64 = s.trim().parse().unwrap();
-    println!("{}" , n+5);
-    //one line int
+struct Exercise39Record{id:usize,label:String,score:i32,state:Exercise39State}
 
-    let mut a: u64 = 1;
-    let result: i64 = loop {
-        if a < 1{
-            println!("small");
-        }
-        else if a == 1{
-            println!("middle");
-            break 1111;
-        }
-        else{
-            println!("big");
-        }
-    };
-    println!("{}" , result);
-    let mut i: u64 = 0;
-    while true{
-        if i >= 3{
-            break;
-        }
-        println!("{}" , i);
-        i += 1;
-    }
-    for i in 0..3{
-        println!("{}" , i);
-    }
-
-
-
-}
-
-fn exercise_2447975439_sum(values: &[i32]) -> i64 {
-    values.iter().map(|value| *value as i64).sum()
-}
-
-fn exercise_2447975439_maximum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().max()
-}
-
-fn exercise_2447975439_minimum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().min()
-}
-
-fn exercise_2447975439_squares(values: &[i32]) -> Vec<i64> {
-    values.iter().map(|value| (*value as i64) * (*value as i64)).collect()
-}
-
-fn exercise_2447975439_filtered(values: &[i32], threshold: i32) -> Vec<i32> {
-    values.iter().copied().filter(|value| *value >= threshold).collect()
-}
-
-#[cfg(test)]
-mod exercise_2447975439_tests {
-    use super::*;
-
-    #[test]
-    fn exercise_2447975439_sum_test() {
-        assert_eq!(exercise_2447975439_sum(&[1, 2, 3]), 6);
+impl Exercise39Record{
+    fn grade(&self)->char{
+        match self.score{95..=100=>'A',85..=94=>'B',70..=84=>'C',_=>'D'}
     }
 }
-const EXERCISE_2447975439_75: i32 = 114;
-const EXERCISE_2447975439_76: i32 = 115;
-const EXERCISE_2447975439_77: i32 = 116;
-const EXERCISE_2447975439_78: i32 = 117;
-const EXERCISE_2447975439_79: i32 = 118;
+
+fn exercise_39_operation(values:&[i32])->i64{
+    values.iter().enumerate().map(|(index,value)|(*value as i64)*(index as i64+39)).sum()
+}
+
+fn main(){
+    println!("Exercise 39: hello1");
+    let records=[
+        Exercise39Record{id:1,label:"Ada".into(),score:98,state:Exercise39State::Finished},
+        Exercise39Record{id:2,label:"Linus".into(),score:86,state:Exercise39State::Running},
+        Exercise39Record{id:3,label:"Grace".into(),score:73,state:Exercise39State::Idle},
+    ];
+    for record in &records{
+        println!("{} {} {} {:?}",record.id,record.label,record.grade(),record.state);
+    }
+    println!("operation={}",exercise_39_operation(&[12,7,19,3,25]));
+}
+
+const EXERCISE_39_27:i32=39;
+const EXERCISE_39_29:i32=39;
+const EXERCISE_39_30:i32=39;
+const EXERCISE_39_31:i32=39;
+const EXERCISE_39_32:i32=39;
+const EXERCISE_39_33:i32=39;
+const EXERCISE_39_34:i32=39;
+const EXERCISE_39_35:i32=39;
+const EXERCISE_39_36:i32=39;
+const EXERCISE_39_37:i32=39;
+const EXERCISE_39_38:i32=39;
+const EXERCISE_39_39:i32=39;
+const EXERCISE_39_40:i32=39;
+const EXERCISE_39_41:i32=39;
+const EXERCISE_39_42:i32=39;
+const EXERCISE_39_43:i32=39;
+const EXERCISE_39_44:i32=39;
+const EXERCISE_39_45:i32=39;
+const EXERCISE_39_46:i32=39;
+const EXERCISE_39_47:i32=39;
+const EXERCISE_39_48:i32=39;
+const EXERCISE_39_49:i32=39;
+const EXERCISE_39_50:i32=39;
+const EXERCISE_39_51:i32=39;
+const EXERCISE_39_52:i32=39;
+const EXERCISE_39_53:i32=39;
+const EXERCISE_39_54:i32=39;
+const EXERCISE_39_55:i32=39;
+const EXERCISE_39_56:i32=39;
+const EXERCISE_39_57:i32=39;
+const EXERCISE_39_58:i32=39;
+const EXERCISE_39_59:i32=39;
+const EXERCISE_39_60:i32=39;
+const EXERCISE_39_61:i32=39;
+const EXERCISE_39_62:i32=39;
+const EXERCISE_39_63:i32=39;
+const EXERCISE_39_64:i32=39;
+const EXERCISE_39_65:i32=39;
+const EXERCISE_39_66:i32=39;
+const EXERCISE_39_67:i32=39;
+const EXERCISE_39_68:i32=39;
+const EXERCISE_39_69:i32=39;
+const EXERCISE_39_70:i32=39;
+const EXERCISE_39_71:i32=39;
+const EXERCISE_39_72:i32=39;
+const EXERCISE_39_73:i32=39;
+const EXERCISE_39_74:i32=39;
+const EXERCISE_39_75:i32=39;
+const EXERCISE_39_76:i32=39;
+const EXERCISE_39_77:i32=39;
+const EXERCISE_39_78:i32=39;
+const EXERCISE_39_79:i32=39;

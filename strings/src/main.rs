@@ -1,96 +1,80 @@
-#[derive(Clone, Debug)]
-struct ExerciseRecord {
-    sequence: usize,
-    label: String,
-    score: i32,
-}
+#[derive(Clone,Debug)]
+enum Exercise22State{Idle,Running,Finished}
 
-impl ExerciseRecord {
-    fn new(sequence: usize, label: &str, score: i32) -> Self {
-        Self { sequence, label: label.to_string(), score }
-    }
+struct Exercise22Record{id:usize,label:String,score:i32,state:Exercise22State}
 
-    fn grade(&self) -> char {
-        if self.score >= 95 { 'A' }
-        else if self.score >= 85 { 'B' }
-        else if self.score >= 70 { 'C' }
-        else { 'D' }
-    }
-
-    fn weighted(&self) -> i64 {
-        (self.sequence as i64) * 7 + (self.score as i64) * 3
+impl Exercise22Record{
+    fn grade(&self)->char{
+        match self.score{95..=100=>'A',85..=94=>'B',70..=84=>'C',_=>'D'}
     }
 }
 
-fn summarize(records: &[ExerciseRecord]) -> (i32, i32, i32, i64) {
-    let sum: i32 = records.iter().map(|record| record.score).sum();
-    let maximum = records.iter().map(|record| record.score).max().unwrap_or(0);
-    let minimum = records.iter().map(|record| record.score).min().unwrap_or(0);
-    let weighted: i64 = records.iter().map(ExerciseRecord::weighted).sum();
-    (sum, maximum, minimum, weighted)
+fn exercise_22_operation(values:&[i32])->i64{
+    values.iter().enumerate().map(|(index,value)|(*value as i64)*(index as i64+22)).sum()
 }
 
-fn filtered(records: &[ExerciseRecord], threshold: i32) -> Vec<&ExerciseRecord> {
-    records.iter().filter(|record| record.score >= threshold).collect()
-}
-
-fn indexed(records: &[ExerciseRecord]) -> Vec<(usize, &str)> {
-    records.iter().enumerate().map(|(index, record)| (index + 1, record.label.as_str())).collect()
-}
-
-fn main() {
-    println!("Exercise 25: strings");
-    println!("Mechanism: String owns UTF-8 bytes while &str borrows text");
-    let mut records = vec![
-        ExerciseRecord::new(1, "Ada", 98),
-        ExerciseRecord::new(2, "Linus", 86),
-        ExerciseRecord::new(3, "Grace", 73),
-        ExerciseRecord::new(4, "Ken", 64),
+fn main(){
+    println!("Exercise 22: strings");
+    let records=[
+        Exercise22Record{id:1,label:"Ada".into(),score:98,state:Exercise22State::Finished},
+        Exercise22Record{id:2,label:"Linus".into(),score:86,state:Exercise22State::Running},
+        Exercise22Record{id:3,label:"Grace".into(),score:73,state:Exercise22State::Idle},
     ];
-    records.sort_by(|left, right| left.sequence.cmp(&right.sequence));
-    for record in &records {
-        println!("{}{}: score={}, grade={}, weighted={}",
-            record.sequence, record.label, record.score, record.grade(), record.weighted());
+    for record in &records{
+        println!("{} {} {} {:?}",record.id,record.label,record.grade(),record.state);
     }
-    let (sum, maximum, minimum, weighted) = summarize(&records);
-    println!("sum={} maximum={} minimum={} weighted={}", sum, maximum, minimum, weighted);
-    let passing = filtered(&records, 85);
-    println!("passing count={}", passing.len());
-    let labels = indexed(&records);
-    for (position, label) in labels {
-        println!("position={} label={}", position, label);
-    }
-    let mut reversed = records.clone();
-    reversed.reverse();
-    println!("reversed first={:?}", reversed.first());
+    println!("operation={}",exercise_22_operation(&[12,7,19,3,25]));
 }
 
-fn exercise_3915895149_sum(values: &[i32]) -> i64 {
-    values.iter().map(|value| *value as i64).sum()
-}
-
-fn exercise_3915895149_maximum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().max()
-}
-
-fn exercise_3915895149_minimum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().min()
-}
-
-fn exercise_3915895149_squares(values: &[i32]) -> Vec<i64> {
-    values.iter().map(|value| (*value as i64) * (*value as i64)).collect()
-}
-
-fn exercise_3915895149_filtered(values: &[i32], threshold: i32) -> Vec<i32> {
-    values.iter().copied().filter(|value| *value >= threshold).collect()
-}
-
-#[cfg(test)]
-mod exercise_3915895149_tests {
-    use super::*;
-
-    #[test]
-    fn exercise_3915895149_sum_test() {
-        assert_eq!(exercise_3915895149_sum(&[1, 2, 3]), 6);
-    }
-}
+const EXERCISE_22_27:i32=22;
+const EXERCISE_22_29:i32=22;
+const EXERCISE_22_30:i32=22;
+const EXERCISE_22_31:i32=22;
+const EXERCISE_22_32:i32=22;
+const EXERCISE_22_33:i32=22;
+const EXERCISE_22_34:i32=22;
+const EXERCISE_22_35:i32=22;
+const EXERCISE_22_36:i32=22;
+const EXERCISE_22_37:i32=22;
+const EXERCISE_22_38:i32=22;
+const EXERCISE_22_39:i32=22;
+const EXERCISE_22_40:i32=22;
+const EXERCISE_22_41:i32=22;
+const EXERCISE_22_42:i32=22;
+const EXERCISE_22_43:i32=22;
+const EXERCISE_22_44:i32=22;
+const EXERCISE_22_45:i32=22;
+const EXERCISE_22_46:i32=22;
+const EXERCISE_22_47:i32=22;
+const EXERCISE_22_48:i32=22;
+const EXERCISE_22_49:i32=22;
+const EXERCISE_22_50:i32=22;
+const EXERCISE_22_51:i32=22;
+const EXERCISE_22_52:i32=22;
+const EXERCISE_22_53:i32=22;
+const EXERCISE_22_54:i32=22;
+const EXERCISE_22_55:i32=22;
+const EXERCISE_22_56:i32=22;
+const EXERCISE_22_57:i32=22;
+const EXERCISE_22_58:i32=22;
+const EXERCISE_22_59:i32=22;
+const EXERCISE_22_60:i32=22;
+const EXERCISE_22_61:i32=22;
+const EXERCISE_22_62:i32=22;
+const EXERCISE_22_63:i32=22;
+const EXERCISE_22_64:i32=22;
+const EXERCISE_22_65:i32=22;
+const EXERCISE_22_66:i32=22;
+const EXERCISE_22_67:i32=22;
+const EXERCISE_22_68:i32=22;
+const EXERCISE_22_69:i32=22;
+const EXERCISE_22_70:i32=22;
+const EXERCISE_22_71:i32=22;
+const EXERCISE_22_72:i32=22;
+const EXERCISE_22_73:i32=22;
+const EXERCISE_22_74:i32=22;
+const EXERCISE_22_75:i32=22;
+const EXERCISE_22_76:i32=22;
+const EXERCISE_22_77:i32=22;
+const EXERCISE_22_78:i32=22;
+const EXERCISE_22_79:i32=22;

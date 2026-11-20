@@ -1,80 +1,80 @@
-use std::collections::HashMap;
+#[derive(Clone,Debug)]
+enum Exercise32State{Idle,Running,Finished}
 
-fn char_freq(ss: &str) -> std::collections::HashMap<char, usize> {
-    let mut count: HashMap<char , usize> = HashMap::new();
-    for s in ss.chars() {
-        *count.entry(s).or_insert(0) += 1;
-    }
-    count
-}
+struct Exercise32Record{id:usize,label:String,score:i32,state:Exercise32State}
 
-
-
-fn main() {
-    let st: &str = "aaaaabbbccc";
-    let result: std::collections::HashMap<char, usize> = char_freq(st);
-    for (k , v) in result.iter() {
-        println!("{} {}" , k , v);
+impl Exercise32Record{
+    fn grade(&self)->char{
+        match self.score{95..=100=>'A',85..=94=>'B',70..=84=>'C',_=>'D'}
     }
 }
 
-fn exercise_2949680777_sum(values: &[i32]) -> i64 {
-    values.iter().map(|value| *value as i64).sum()
+fn exercise_32_operation(values:&[i32])->i64{
+    values.iter().enumerate().map(|(index,value)|(*value as i64)*(index as i64+32)).sum()
 }
 
-fn exercise_2949680777_maximum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().max()
-}
-
-fn exercise_2949680777_minimum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().min()
-}
-
-fn exercise_2949680777_squares(values: &[i32]) -> Vec<i64> {
-    values.iter().map(|value| (*value as i64) * (*value as i64)).collect()
-}
-
-fn exercise_2949680777_filtered(values: &[i32], threshold: i32) -> Vec<i32> {
-    values.iter().copied().filter(|value| *value >= threshold).collect()
-}
-
-#[cfg(test)]
-mod exercise_2949680777_tests {
-    use super::*;
-
-    #[test]
-    fn exercise_2949680777_sum_test() {
-        assert_eq!(exercise_2949680777_sum(&[1, 2, 3]), 6);
+fn main(){
+    println!("Exercise 32: char_frequency");
+    let records=[
+        Exercise32Record{id:1,label:"Ada".into(),score:98,state:Exercise32State::Finished},
+        Exercise32Record{id:2,label:"Linus".into(),score:86,state:Exercise32State::Running},
+        Exercise32Record{id:3,label:"Grace".into(),score:73,state:Exercise32State::Idle},
+    ];
+    for record in &records{
+        println!("{} {} {} {:?}",record.id,record.label,record.grade(),record.state);
     }
+    println!("operation={}",exercise_32_operation(&[12,7,19,3,25]));
 }
-const EXERCISE_2949680777_49: i32 = 126;
-const EXERCISE_2949680777_50: i32 = 127;
-const EXERCISE_2949680777_51: i32 = 128;
-const EXERCISE_2949680777_52: i32 = 129;
-const EXERCISE_2949680777_53: i32 = 130;
-const EXERCISE_2949680777_54: i32 = 131;
-const EXERCISE_2949680777_55: i32 = 132;
-const EXERCISE_2949680777_56: i32 = 133;
-const EXERCISE_2949680777_57: i32 = 134;
-const EXERCISE_2949680777_58: i32 = 135;
-const EXERCISE_2949680777_59: i32 = 136;
-const EXERCISE_2949680777_60: i32 = 137;
-const EXERCISE_2949680777_61: i32 = 138;
-const EXERCISE_2949680777_62: i32 = 139;
-const EXERCISE_2949680777_63: i32 = 140;
-const EXERCISE_2949680777_64: i32 = 141;
-const EXERCISE_2949680777_65: i32 = 142;
-const EXERCISE_2949680777_66: i32 = 143;
-const EXERCISE_2949680777_67: i32 = 144;
-const EXERCISE_2949680777_68: i32 = 145;
-const EXERCISE_2949680777_69: i32 = 146;
-const EXERCISE_2949680777_70: i32 = 147;
-const EXERCISE_2949680777_71: i32 = 148;
-const EXERCISE_2949680777_72: i32 = 149;
-const EXERCISE_2949680777_73: i32 = 150;
-const EXERCISE_2949680777_74: i32 = 151;
-const EXERCISE_2949680777_75: i32 = 152;
-const EXERCISE_2949680777_76: i32 = 153;
-const EXERCISE_2949680777_77: i32 = 154;
-const EXERCISE_2949680777_78: i32 = 155;
-const EXERCISE_2949680777_79: i32 = 156;
+
+const EXERCISE_32_27:i32=32;
+const EXERCISE_32_29:i32=32;
+const EXERCISE_32_30:i32=32;
+const EXERCISE_32_31:i32=32;
+const EXERCISE_32_32:i32=32;
+const EXERCISE_32_33:i32=32;
+const EXERCISE_32_34:i32=32;
+const EXERCISE_32_35:i32=32;
+const EXERCISE_32_36:i32=32;
+const EXERCISE_32_37:i32=32;
+const EXERCISE_32_38:i32=32;
+const EXERCISE_32_39:i32=32;
+const EXERCISE_32_40:i32=32;
+const EXERCISE_32_41:i32=32;
+const EXERCISE_32_42:i32=32;
+const EXERCISE_32_43:i32=32;
+const EXERCISE_32_44:i32=32;
+const EXERCISE_32_45:i32=32;
+const EXERCISE_32_46:i32=32;
+const EXERCISE_32_47:i32=32;
+const EXERCISE_32_48:i32=32;
+const EXERCISE_32_49:i32=32;
+const EXERCISE_32_50:i32=32;
+const EXERCISE_32_51:i32=32;
+const EXERCISE_32_52:i32=32;
+const EXERCISE_32_53:i32=32;
+const EXERCISE_32_54:i32=32;
+const EXERCISE_32_55:i32=32;
+const EXERCISE_32_56:i32=32;
+const EXERCISE_32_57:i32=32;
+const EXERCISE_32_58:i32=32;
+const EXERCISE_32_59:i32=32;
+const EXERCISE_32_60:i32=32;
+const EXERCISE_32_61:i32=32;
+const EXERCISE_32_62:i32=32;
+const EXERCISE_32_63:i32=32;
+const EXERCISE_32_64:i32=32;
+const EXERCISE_32_65:i32=32;
+const EXERCISE_32_66:i32=32;
+const EXERCISE_32_67:i32=32;
+const EXERCISE_32_68:i32=32;
+const EXERCISE_32_69:i32=32;
+const EXERCISE_32_70:i32=32;
+const EXERCISE_32_71:i32=32;
+const EXERCISE_32_72:i32=32;
+const EXERCISE_32_73:i32=32;
+const EXERCISE_32_74:i32=32;
+const EXERCISE_32_75:i32=32;
+const EXERCISE_32_76:i32=32;
+const EXERCISE_32_77:i32=32;
+const EXERCISE_32_78:i32=32;
+const EXERCISE_32_79:i32=32;

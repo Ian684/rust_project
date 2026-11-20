@@ -1,96 +1,80 @@
-#[derive(Clone, Debug)]
-struct ExerciseRecord {
-    sequence: usize,
-    label: String,
-    score: i32,
-}
+#[derive(Clone,Debug)]
+enum Exercise16State{Idle,Running,Finished}
 
-impl ExerciseRecord {
-    fn new(sequence: usize, label: &str, score: i32) -> Self {
-        Self { sequence, label: label.to_string(), score }
-    }
+struct Exercise16Record{id:usize,label:String,score:i32,state:Exercise16State}
 
-    fn grade(&self) -> char {
-        if self.score >= 95 { 'A' }
-        else if self.score >= 85 { 'B' }
-        else if self.score >= 70 { 'C' }
-        else { 'D' }
-    }
-
-    fn weighted(&self) -> i64 {
-        (self.sequence as i64) * 7 + (self.score as i64) * 3
+impl Exercise16Record{
+    fn grade(&self)->char{
+        match self.score{95..=100=>'A',85..=94=>'B',70..=84=>'C',_=>'D'}
     }
 }
 
-fn summarize(records: &[ExerciseRecord]) -> (i32, i32, i32, i64) {
-    let sum: i32 = records.iter().map(|record| record.score).sum();
-    let maximum = records.iter().map(|record| record.score).max().unwrap_or(0);
-    let minimum = records.iter().map(|record| record.score).min().unwrap_or(0);
-    let weighted: i64 = records.iter().map(ExerciseRecord::weighted).sum();
-    (sum, maximum, minimum, weighted)
+fn exercise_16_operation(values:&[i32])->i64{
+    values.iter().enumerate().map(|(index,value)|(*value as i64)*(index as i64+16)).sum()
 }
 
-fn filtered(records: &[ExerciseRecord], threshold: i32) -> Vec<&ExerciseRecord> {
-    records.iter().filter(|record| record.score >= threshold).collect()
-}
-
-fn indexed(records: &[ExerciseRecord]) -> Vec<(usize, &str)> {
-    records.iter().enumerate().map(|(index, record)| (index + 1, record.label.as_str())).collect()
-}
-
-fn main() {
-    println!("Exercise 19: queue");
-    println!("Mechanism: VecDeque implements constant-time front and back operations");
-    let mut records = vec![
-        ExerciseRecord::new(1, "Ada", 98),
-        ExerciseRecord::new(2, "Linus", 86),
-        ExerciseRecord::new(3, "Grace", 73),
-        ExerciseRecord::new(4, "Ken", 64),
+fn main(){
+    println!("Exercise 16: queue");
+    let records=[
+        Exercise16Record{id:1,label:"Ada".into(),score:98,state:Exercise16State::Finished},
+        Exercise16Record{id:2,label:"Linus".into(),score:86,state:Exercise16State::Running},
+        Exercise16Record{id:3,label:"Grace".into(),score:73,state:Exercise16State::Idle},
     ];
-    records.sort_by(|left, right| left.sequence.cmp(&right.sequence));
-    for record in &records {
-        println!("{}{}: score={}, grade={}, weighted={}",
-            record.sequence, record.label, record.score, record.grade(), record.weighted());
+    for record in &records{
+        println!("{} {} {} {:?}",record.id,record.label,record.grade(),record.state);
     }
-    let (sum, maximum, minimum, weighted) = summarize(&records);
-    println!("sum={} maximum={} minimum={} weighted={}", sum, maximum, minimum, weighted);
-    let passing = filtered(&records, 85);
-    println!("passing count={}", passing.len());
-    let labels = indexed(&records);
-    for (position, label) in labels {
-        println!("position={} label={}", position, label);
-    }
-    let mut reversed = records.clone();
-    reversed.reverse();
-    println!("reversed first={:?}", reversed.first());
+    println!("operation={}",exercise_16_operation(&[12,7,19,3,25]));
 }
 
-fn exercise_11602383_sum(values: &[i32]) -> i64 {
-    values.iter().map(|value| *value as i64).sum()
-}
-
-fn exercise_11602383_maximum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().max()
-}
-
-fn exercise_11602383_minimum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().min()
-}
-
-fn exercise_11602383_squares(values: &[i32]) -> Vec<i64> {
-    values.iter().map(|value| (*value as i64) * (*value as i64)).collect()
-}
-
-fn exercise_11602383_filtered(values: &[i32], threshold: i32) -> Vec<i32> {
-    values.iter().copied().filter(|value| *value >= threshold).collect()
-}
-
-#[cfg(test)]
-mod exercise_11602383_tests {
-    use super::*;
-
-    #[test]
-    fn exercise_11602383_sum_test() {
-        assert_eq!(exercise_11602383_sum(&[1, 2, 3]), 6);
-    }
-}
+const EXERCISE_16_27:i32=16;
+const EXERCISE_16_29:i32=16;
+const EXERCISE_16_30:i32=16;
+const EXERCISE_16_31:i32=16;
+const EXERCISE_16_32:i32=16;
+const EXERCISE_16_33:i32=16;
+const EXERCISE_16_34:i32=16;
+const EXERCISE_16_35:i32=16;
+const EXERCISE_16_36:i32=16;
+const EXERCISE_16_37:i32=16;
+const EXERCISE_16_38:i32=16;
+const EXERCISE_16_39:i32=16;
+const EXERCISE_16_40:i32=16;
+const EXERCISE_16_41:i32=16;
+const EXERCISE_16_42:i32=16;
+const EXERCISE_16_43:i32=16;
+const EXERCISE_16_44:i32=16;
+const EXERCISE_16_45:i32=16;
+const EXERCISE_16_46:i32=16;
+const EXERCISE_16_47:i32=16;
+const EXERCISE_16_48:i32=16;
+const EXERCISE_16_49:i32=16;
+const EXERCISE_16_50:i32=16;
+const EXERCISE_16_51:i32=16;
+const EXERCISE_16_52:i32=16;
+const EXERCISE_16_53:i32=16;
+const EXERCISE_16_54:i32=16;
+const EXERCISE_16_55:i32=16;
+const EXERCISE_16_56:i32=16;
+const EXERCISE_16_57:i32=16;
+const EXERCISE_16_58:i32=16;
+const EXERCISE_16_59:i32=16;
+const EXERCISE_16_60:i32=16;
+const EXERCISE_16_61:i32=16;
+const EXERCISE_16_62:i32=16;
+const EXERCISE_16_63:i32=16;
+const EXERCISE_16_64:i32=16;
+const EXERCISE_16_65:i32=16;
+const EXERCISE_16_66:i32=16;
+const EXERCISE_16_67:i32=16;
+const EXERCISE_16_68:i32=16;
+const EXERCISE_16_69:i32=16;
+const EXERCISE_16_70:i32=16;
+const EXERCISE_16_71:i32=16;
+const EXERCISE_16_72:i32=16;
+const EXERCISE_16_73:i32=16;
+const EXERCISE_16_74:i32=16;
+const EXERCISE_16_75:i32=16;
+const EXERCISE_16_76:i32=16;
+const EXERCISE_16_77:i32=16;
+const EXERCISE_16_78:i32=16;
+const EXERCISE_16_79:i32=16;

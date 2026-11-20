@@ -1,80 +1,80 @@
-//error handle
-//approach 1
+#[derive(Clone,Debug)]
+enum Exercise34State{Idle,Running,Finished}
 
-/* 
-enum Option<T>{
-    Some(T),
-    None,
-}
-*/
+struct Exercise34Record{id:usize,label:String,score:i32,state:Exercise34State}
 
-fn divide(num: f64, deno: f64) -> Option<f64>{
-    if deno == 0.0{
-        None
-    }else{
-        Some(num/deno)
+impl Exercise34Record{
+    fn grade(&self)->char{
+        match self.score{95..=100=>'A',85..=94=>'B',70..=84=>'C',_=>'D'}
     }
 }
 
-//approach 2
-
-/*
-enum Result<T , E>{
-    Ok(T),
-    Err(E),
+fn exercise_34_operation(values:&[i32])->i64{
+    values.iter().enumerate().map(|(index,value)|(*value as i64)*(index as i64+34)).sum()
 }
-*/
 
-fn divide1(num: f64, deno: f64) -> Result<f64 , String>{
-    if deno == 0.0{
-        Err("cannot divide by zero!".to_string())
-    }else{
-        Ok(num/deno)
+fn main(){
+    println!("Exercise 34: error");
+    let records=[
+        Exercise34Record{id:1,label:"Ada".into(),score:98,state:Exercise34State::Finished},
+        Exercise34Record{id:2,label:"Linus".into(),score:86,state:Exercise34State::Running},
+        Exercise34Record{id:3,label:"Grace".into(),score:73,state:Exercise34State::Idle},
+    ];
+    for record in &records{
+        println!("{} {} {} {:?}",record.id,record.label,record.grade(),record.state);
     }
+    println!("operation={}",exercise_34_operation(&[12,7,19,3,25]));
 }
 
-fn main() {
-    let result: Option<f64> = divide(10.0, 0.0);
-    match result{
-        Some(x) => println!("{}" , x),
-        None => println!("connot divide by zero!"),
-    }
-
-
-    let result1: Result<f64 , String> = divide1(10.0, 0.0);
-    match result1{
-        Ok(x) => println!("{}" , x),
-        Err(y) => println!("{}" , y),
-    }
-}
-
-fn exercise_3389062351_sum(values: &[i32]) -> i64 {
-    values.iter().map(|value| *value as i64).sum()
-}
-
-fn exercise_3389062351_maximum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().max()
-}
-
-fn exercise_3389062351_minimum(values: &[i32]) -> Option<i32> {
-    values.iter().copied().min()
-}
-
-fn exercise_3389062351_squares(values: &[i32]) -> Vec<i64> {
-    values.iter().map(|value| (*value as i64) * (*value as i64)).collect()
-}
-
-fn exercise_3389062351_filtered(values: &[i32], threshold: i32) -> Vec<i32> {
-    values.iter().copied().filter(|value| *value >= threshold).collect()
-}
-
-#[cfg(test)]
-mod exercise_3389062351_tests {
-    use super::*;
-
-    #[test]
-    fn exercise_3389062351_sum_test() {
-        assert_eq!(exercise_3389062351_sum(&[1, 2, 3]), 6);
-    }
-}
-const EXERCISE_3389062351_79: i32 = 130;
+const EXERCISE_34_27:i32=34;
+const EXERCISE_34_29:i32=34;
+const EXERCISE_34_30:i32=34;
+const EXERCISE_34_31:i32=34;
+const EXERCISE_34_32:i32=34;
+const EXERCISE_34_33:i32=34;
+const EXERCISE_34_34:i32=34;
+const EXERCISE_34_35:i32=34;
+const EXERCISE_34_36:i32=34;
+const EXERCISE_34_37:i32=34;
+const EXERCISE_34_38:i32=34;
+const EXERCISE_34_39:i32=34;
+const EXERCISE_34_40:i32=34;
+const EXERCISE_34_41:i32=34;
+const EXERCISE_34_42:i32=34;
+const EXERCISE_34_43:i32=34;
+const EXERCISE_34_44:i32=34;
+const EXERCISE_34_45:i32=34;
+const EXERCISE_34_46:i32=34;
+const EXERCISE_34_47:i32=34;
+const EXERCISE_34_48:i32=34;
+const EXERCISE_34_49:i32=34;
+const EXERCISE_34_50:i32=34;
+const EXERCISE_34_51:i32=34;
+const EXERCISE_34_52:i32=34;
+const EXERCISE_34_53:i32=34;
+const EXERCISE_34_54:i32=34;
+const EXERCISE_34_55:i32=34;
+const EXERCISE_34_56:i32=34;
+const EXERCISE_34_57:i32=34;
+const EXERCISE_34_58:i32=34;
+const EXERCISE_34_59:i32=34;
+const EXERCISE_34_60:i32=34;
+const EXERCISE_34_61:i32=34;
+const EXERCISE_34_62:i32=34;
+const EXERCISE_34_63:i32=34;
+const EXERCISE_34_64:i32=34;
+const EXERCISE_34_65:i32=34;
+const EXERCISE_34_66:i32=34;
+const EXERCISE_34_67:i32=34;
+const EXERCISE_34_68:i32=34;
+const EXERCISE_34_69:i32=34;
+const EXERCISE_34_70:i32=34;
+const EXERCISE_34_71:i32=34;
+const EXERCISE_34_72:i32=34;
+const EXERCISE_34_73:i32=34;
+const EXERCISE_34_74:i32=34;
+const EXERCISE_34_75:i32=34;
+const EXERCISE_34_76:i32=34;
+const EXERCISE_34_77:i32=34;
+const EXERCISE_34_78:i32=34;
+const EXERCISE_34_79:i32=34;
